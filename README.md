@@ -174,7 +174,7 @@ python scripts/evaluate.py
 
 ### 📈 Model Performance (Best Sampling Strategy: SMOTE)
 
-![SMOTE Performance](docs/images/smote_highest_metrics.png)
+![SMOTE Performance](src/visualizations/smote_highest_metrics.png)
 
 The figure above presents the comparative performance of three classical machine learning models evaluated using 5-fold cross-validation with SMOTE applied to address class imbalance.
 
