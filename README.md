@@ -280,7 +280,7 @@ Potential research extensions:
 
 ## 🙏 Acknowledgements
 
-* UCI Machine Learning Repository (Diabetes Dataset)
+* [UCI Machine Learning Repository (Diabetes Dataset)](https://www.kaggle.com/datasets/brandao/diabetes/data)
 * scikit-learn and imbalanced-learn communities
 
 ---
@@ -289,5 +289,5 @@ Potential research extensions:
 
 For research collaboration or queries:
 
-* Email: [your.email@example.com](mailto:your.email@example.com)
-* GitHub: [https://github.com/your-username](https://github.com/your-username)
+* Email: [Shahzainaslam28@gmail.com](mailto:Shahzainaslam28@gmail.com)
+* GitHub: [https://github.com/shahzainaslam11](https://github.com/shahzainaslam11)
