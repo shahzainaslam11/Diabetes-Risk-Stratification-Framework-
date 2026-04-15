@@ -1,14 +1,10 @@
 # 🏥 Predicting Early Hospital Readmission in Diabetic Patients Using K-Fold Cross-Validation and Resampling Techniques
 
----
-
 ## 📌 Abstract
 
 Hospital readmissions among diabetic patients impose significant clinical and economic burdens. This study presents a structured machine learning pipeline to predict patient readmission outcomes using electronic health records. The approach integrates domain-informed feature engineering, categorical encoding, and robust evaluation via 5-fold cross-validation.
 
 To address class imbalance, Synthetic Minority Over-sampling Technique (SMOTE) is incorporated within the training folds. Multiple classical machine learning models are evaluated under a consistent experimental protocol. The pipeline emphasizes reproducibility, modularity, and research rigor while preserving the original experimental logic.
-
----
 
 ## 🎯 Problem Statement
 
@@ -17,8 +13,6 @@ The objective is to predict whether a diabetic patient will be readmitted to the
 - **Input:** Patient encounter records
 - **Output:** Readmission status (`readmitted`)
 - **Task Type:** Supervised Classification
-
----
 
 ## 🧠 Method Overview
 
@@ -29,8 +23,6 @@ The methodology strictly follows the original notebook pipeline, structured into
 - Handling missing values (`?` → NaN → row removal)
 - Dropping non-informative or leakage-prone features:
   - `encounter_id`, `patient_nbr`, `weight`, `payer_code`, `medical_specialty`
-
----
 
 ### 2. Feature Engineering
 
@@ -57,40 +49,32 @@ The methodology strictly follows the original notebook pipeline, structured into
   - Neoplasms
   - Other
 
----
-
 ### 3. Encoding Strategy
 - All categorical features encoded using **Label Encoding**
 
 > Note: This mirrors the original notebook implementation and is intentionally preserved for fidelity.
 
----
-
 ### 4. Handling Class Imbalance
 - SMOTE (Synthetic Minority Over-sampling Technique) applied **only on training folds**
-
----
 
 ### 5. Model Training
 
 The following classical machine learning models are supported:
 
-- Logistic Regression
-- Random Forest
-- Decision Tree
-
----
+- XGBoost Classifier
+- Random Forest Classifier
+- Light GBM Classifier
 
 ### 6. Evaluation Protocol
 
 - **Validation Strategy:** 5-Fold Cross-Validation (KFold)
-- **Metric:** Accuracy (primary metric used in notebook)
+- **Metric:** Accuracy, Precision, Recall, F1 Score, ROC-AUC
 
 For each fold:
-1. Split data into training and validation sets
-2. Apply SMOTE (if enabled) on training data
-3. Train model
-4. Evaluate on validation set
+1. Splitting data into training and validation sets
+2. Applying SMOTE (if enabled) on training data
+3. Training the model
+4. Evaluation on validation set
 
 Outputs:
 - Fold-wise accuracy
@@ -115,8 +99,6 @@ diabetes-readmission-prediction/
 
 ````
 
----
-
 ## ⚙️ Installation
 
 ### 1. Clone Repository
@@ -139,8 +121,6 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ```
 
----
-
 ## 🚀 Usage
 
 ### 🔹 Train Model (Single Run)
@@ -160,15 +140,11 @@ python scripts/train.py \
 python scripts/run_experiments.py
 ```
 
----
-
 ### 🔹 Evaluate Results
 
 ```bash
 python scripts/evaluate.py
 ```
-
----
 
 ## 📊 Results
 
@@ -222,8 +198,6 @@ Each file contains:
 * Model comparison (for multi-model runs)
 * Best fold identification
 
----
-
 ## 🔁 Reproducibility
 
 This repository ensures reproducibility through:
@@ -241,8 +215,6 @@ Covered components:
 * Model training
 * Cross-validation logic
 
----
-
 ## 📦 Requirements
 
 * Python 3.9+
@@ -250,8 +222,6 @@ Covered components:
 * numpy
 * scikit-learn
 * imbalanced-learn
-
----
 
 ## 🔮 Future Work
 
@@ -262,8 +232,6 @@ Potential research extensions:
 * Perform ablation studies on feature engineering components
 * Compare multiple resampling strategies (ADASYN, RandomOverSampler)
 * Integrate hyperparameter tuning (GridSearchCV, Optuna)
-
----
 
 ## 📜 Citation
 
@@ -282,8 +250,6 @@ Potential research extensions:
 
 * [UCI Machine Learning Repository (Diabetes Dataset)](https://www.kaggle.com/datasets/brandao/diabetes/data)
 * scikit-learn and imbalanced-learn communities
-
----
 
 ## 📬 Contact
 
